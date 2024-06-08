@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Welcome to the Data API!</h1>
+    <p class="lead">This webpage is dynamically generated and contains the list of the available endpoints that are
+        registered in the data_bp blueprint.</p>
+    <p class="lead">Available endpoints:</p>
+    <div class="list-group">
+        <div class="list-group-item">
+            <h5>API Documentation</h5>
+            <ul>
+                <li>Swagger UI: <a href="{{ api_info.swagger_url }}" target="_blank">{{ api_info.swagger_url }}</a></li>
+                <li>API Spec: <a href="{{ api_info.api_spec }}" target="_blank">{{ api_info.api_spec }}</a></li>
+            </ul>
+        </div>
+        {% for name, urls in api_info.endpoints.items() %}
+        <div class="list-group-item">
+            <h5>{{ name }}</h5>
+            <ul>
+                {% if urls.data %}
+                <li>Data (Level 1): <a href="{{ urls.data[1] }}" target="_blank">{{ urls.data[1] }}</a></li>
+                <li>Data (Level 2): <a href="{{ urls.data[2] }}" target="_blank">{{ urls.data[2] }}</a></li>
+                <li>Data (Level 3): <a href="{{ urls.data[3] }}" target="_blank">{{ urls.data[3] }}</a></li>
+                {% endif %}
+                {% if urls.metadata %}
+                <li>Metadata: <a href="{{ urls.metadata }}" target="_blank">{{ urls.metadata }}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

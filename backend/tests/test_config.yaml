@@ -1,0 +1,19 @@
+app:
+  secret_key: "your_secret_key"
+  debug: true
+  log_file: "app.log"
+  log_level: "DEBUG"  # Can be DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_to_console: true
+  log_to_file: true
+  log_max_bytes: 10000  # Maximum log file size in bytes before rotation
+  log_backup_count: 1  # Number of backup files to keep
+
+data_source:
+  type: "excel"  # Can be "sqlite" or "excel"
+  sqlite:
+    db_path: "my_database.db"
+    create_tables_from_excel: true  # Flag to create tables from Excel if database is not found
+    excel_file: "../../vgrdl_r2b1_bs2022_0.xlsx"
+  excel:
+    file_name: "../../vgrdl_r2b1_bs2022_0.xlsx"

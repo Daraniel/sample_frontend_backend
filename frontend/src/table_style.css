@@ -1,0 +1,18 @@
+/* Styles the scrollbar itself */
+.table-responsive::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+    height: 8px; /* height of the entire scrollbar */
+}
+
+/* Styles the draggable part of the scrollbar */
+.table-responsive::-webkit-scrollbar-thumb {
+    background-color: darkgrey; /* color of the scroll thumb */
+    border-radius: 10px; /* roundness of the scroll thumb */
+    border: 1px solid lightblue; /* creates a border around the scroll thumb */
+}
+
+/* Styles the part of the scrollbar track */
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+    border-radius: 10px; /* roundness of the track */
+}

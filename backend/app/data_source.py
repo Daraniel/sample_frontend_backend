@@ -35,12 +35,12 @@ class BaseDataSource(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_metadata(self, table_name: str) -> str:
+    def get_metadata(self, table_name: str) -> pd.DataFrame:
         """
         Retrieve metadata from the specified table.
 
         :param table_name: Name of the table
-        :return: String of the metadata.
+        :return: DataFrame containing the metadata.
         :raises DataSourceException: If a general data related error happens.
         :raises MetadataNotFoundException: If the metadata could not be found or is empty.
         """
@@ -64,12 +64,12 @@ class FileDataSource(BaseDataSource):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def get_metadata(self, table_name: str) -> str:
+    def get_metadata(self, table_name: str) -> pd.DataFrame:
         """
         Retrieve metadata from the specified table.
 
         :param table_name: Name of the table
-        :return: String of the metadata.
+        :return: DataFrame containing the metadata.
         :raises MetadataNotFoundException: If the metadata could not be found or is empty.
         """
         raise NotImplementedError
@@ -122,24 +122,24 @@ class ExcelDataSource(FileDataSource):
         data.columns = columns
         return data
 
-    def get_metadata(self, table_name: str) -> str:
+    def get_metadata(self, table_name: str) -> pd.DataFrame:
         """
         Retrieve metadata from the specified table.
 
         :param table_name: Name of the table (Excel sheet).
-        :return: String of the metadata.
+        :return: DataFrame containing the metadata.
         :raises MetadataNotFoundException: If the metadata could not be found or is empty.
         """
         try:
             metadata = ExcelDataSource.extract_metadata(self.data, table_name)
-            if not metadata:
+            if metadata.empty:
                 raise MetadataNotFoundException(f"No metadata found for table {table_name}.")
             return metadata
         except Exception as e:
             raise MetadataNotFoundException(f"Error retrieving metadata from table {table_name}: {e}")
 
     @staticmethod
-    def extract_metadata(data: pd.ExcelFile, table_name: str) -> str:
+    def extract_metadata(data: pd.ExcelFile, table_name: str) -> pd.DataFrame:
         """
         Extract the metadata of the wanted table from the given Excel file
 
@@ -147,10 +147,10 @@ class ExcelDataSource(FileDataSource):
 
         :param data: Excel file to extract its metadata
         :param table_name: Name of the table to get its metadata
-        :return: String of the metadata
+        :return: DataFrame containing the metadata
         """
         meta_data = data.parse(table_name, header=None).iloc[:ExcelDataSource.metadata_rows, 0]
-        return ' '.join(meta_data.astype(str))
+        return meta_data.astype(str)
 
 
 class DatabaseDataSource(BaseDataSource):
@@ -193,7 +193,7 @@ class DatabaseDataSource(BaseDataSource):
         except Exception as e:
             raise DataNotFoundException(f"Error retrieving data: {e}")
 
-    def get_metadata(self, table_name):
+    def get_metadata(self, table_name: str) -> pd.DataFrame:
         """
         Retrieve metadata from the specified table.
 
@@ -202,7 +202,7 @@ class DatabaseDataSource(BaseDataSource):
         A good way to do this is to have a metadata table that contains this data.
 
         :param table_name: Name of the table.
-        :return: Dictionary containing the metadata.
+        :return: DataFrame containing the metadata.
         :raises MetadataNotFoundException: If the metadata could not be found or is empty.
         """
         raise NotImplementedError
@@ -340,7 +340,7 @@ class SQLiteDataSource(DatabaseDataSource):
         except SQLAlchemyError as e:
             raise DataNotFoundException(f"Error retrieving data: {e}")
 
-    def get_metadata(self, table_name):
+    def get_metadata(self, table_name: str) -> pd.DataFrame:
         """
         Retrieve metadata from the specified table.
 
@@ -350,7 +350,7 @@ class SQLiteDataSource(DatabaseDataSource):
         A good way to do this is to have a metadata table that contains this data.
 
         :param table_name: Name of the table.
-        :return: Dictionary containing the metadata.
+        :return: DataFrame containing the metadata.
         :raises MetadataNotFoundException: If the metadata could not be found or is empty.
         """
         raise NotImplementedError

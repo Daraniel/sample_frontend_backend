@@ -1,0 +1,22 @@
+name: frontend_backend_test
+version: '1.0'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app
+#    volumes:
+#          - ./backend:/app
+#    environment:
+#      - DATA_SOURCE_PATH=/app/path/to/local_file.csv

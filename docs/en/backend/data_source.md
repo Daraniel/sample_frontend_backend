@@ -26,7 +26,7 @@ Abstract base class for data sources, all subsequent data sources must inherit f
 #### Methods
 
 - `get_data(self, table_name: str, data_level: DataLevel) -> pd.DataFrame`: Abstract method to retrieve data.
-- `get_metadata(self, table_name: str) -> str`: Abstract method to retrieve metadata.
+- `get_metadata(self, table_name: str) -> pd.DataFrame`: Abstract method to retrieve metadata.
 
 ### `FileDataSource` (BaseDataSource)
 
@@ -35,7 +35,7 @@ Abstract base class for file-based data sources.
 #### Methods
 
 - `get_data(self, table_name: str, data_level: DataLevel) -> pd.DataFrame`: Abstract method to retrieve data.
-- `get_metadata(self, table_name: str) -> str`: Abstract method to retrieve metadata.
+- `get_metadata(self, table_name: str) -> pd.DataFrame`: Abstract method to retrieve metadata.
 
 ### `ExcelDataSource` (FileDataSource)
 
@@ -46,7 +46,7 @@ Class for data sources based on Excel files.
 - `__init__(self, file_name: str)`: Initializes the Excel data source with the specified file name.
 - `get_data(self, table_name: str, data_level: DataLevel) -> pd.DataFrame`: Retrieves data from the specified Excel
   sheet and data level.
-- `get_metadata(self, table_name: str) -> str`: Retrieves metadata from the specified Excel sheet.
+- `get_metadata(self, table_name: str) -> pd.DataFrame`: Retrieves metadata from the specified Excel sheet.
 
 ### `DatabaseDataSource` (BaseDataSource)
 
@@ -57,7 +57,7 @@ Semi-abstract base class for database-based data sources.
 - `__init__(self, connection_string)`: Initializes the database data source with the specified connection string.
 - `get_data(self, table_name, data_level: DataLevel) -> pd.DataFrame`: Retrieves data from the specified database table
   and data level.
-- `get_metadata(self, table_name)`: Abstract method to retrieve metadata.
+- `get_metadata(self, table_name: str) -> pd.DataFrame`: Abstract method to retrieve metadata.
 
 ### `SQLiteDataSource` (DatabaseDataSource)
 
@@ -74,9 +74,9 @@ creation of database in this limited project.
   specified sheet data.
 - `get_data(self, table_name, data_level: DataLevel) -> pd.DataFrame`: Retrieves data from the specified database table
   and data level.
-- `get_metadata(self, table_name)`: Method to retrieve metadata, this method is not implemented as definition of
-  metadata in this project is different from the traditional definition and handling it would require creating another
-  table containing project metadata which for the sake of simplicity was skipped.
+- `get_metadata(self, table_name: str) -> pd.DataFrame`: Method to retrieve metadata, this method is not implemented as
+  definition of metadata in this project is different from the traditional definition and handling it would require
+  creating another table containing project metadata which for the sake of simplicity was skipped.
 
 ### `get_data_source(config)`
 

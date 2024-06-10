@@ -5,8 +5,7 @@ function Posts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-      console.log("response aaaa");
-    axios.get('http://127.0.0.1:5000/api/bruftoinlandsprodukt/1')
+    axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         console.log(response);
         setPosts(response.data);

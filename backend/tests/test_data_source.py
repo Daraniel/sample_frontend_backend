@@ -21,7 +21,8 @@ def test_excel_data_source(config):
 
     metadata = excel_source.get_metadata('1.1')
     assert metadata is not None
-    assert metadata == '1   Bruttoinlandsprodukt in jeweiligen Preisen 1.1   Bruttoinlandsprodukt in Mill. EUR'
+    assert (' '.join(list(metadata))
+            == '1   Bruttoinlandsprodukt in jeweiligen Preisen 1.1   Bruttoinlandsprodukt in Mill. EUR')
 
 
 @pytest.fixture

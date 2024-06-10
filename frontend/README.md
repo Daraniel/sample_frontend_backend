@@ -1,48 +1,46 @@
-# Getting Started with Create React App
+# Frontend Displaying the Data as a Dynamic Table
 
-use axios to fetch api
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This folder contains a web application built using React.js that allows users to fetch and display data from an API in a
+tabular format. It leverages the Axios library for API requests and provides a user-friendly interface for selecting
+different tables and levels of data.
 
-## Available Scripts
+Although it is common to use to manage the application state, since this project is pretty simple, it was written
+without it.
 
-In the project directory, you can run:
+Please refer to the docs folder for indepth details about this project.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Dynamic Table and Level Selection**: Users can choose from a list of available tables and levels to fetch specific
+  data from the API.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Metadata Display**: Metadata information for the selected table is displayed at the top of the table, providing
+  additional context for the data being viewed.
 
-### `npm test`
+- **Sortable Headers**: The table headers are sorted to display string-based headers first, improving readability and
+  user experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Scrollable Table**: The table is made scrollable to accommodate large datasets, ensuring ease of navigation and
+  exploration.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository: `git clone https://github.com/Daraniel/sample_frontend_backend/`
+2. Navigate to the frontend directory: `cd frontend`
+3. Install dependencies: `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running the App
 
-### `npm run eject`
+- Start the development server: `npm start`
+- Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Main Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React.js
+- Axios
+- Bootstrap
+- Material UI

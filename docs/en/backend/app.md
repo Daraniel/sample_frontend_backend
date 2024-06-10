@@ -8,13 +8,15 @@ logging, data source initialization, and API endpoint registration.
 This Flask application is designed to load configuration settings from a YAML file, set up logging, initialize a data
 source, and register various API endpoints and blueprints, including Swagger UI for API documentation.
 
-## Dependencies
+## Main Dependencies
 
 - `flask`: For creating the web application.
+- `flask-RESTful`: For creating RESTful APIs with Flask.
+- `flask_cors`: For enabling Cross-Origin Resource Sharing (CORS) in Flask applications.
+- `flask_swagger`: For generating Swagger documentation from the Flask app.
 - `flask_swagger_ui`: For serving Swagger UI to document the API.
 - `pyyaml`: For loading configuration from YAML files.
 - `cerberus`: For validating configuration data.
-- `flask_swagger`: For generating Swagger documentation from the Flask app.
 
 ## Application Structure
 
@@ -83,27 +85,28 @@ register_blueprints(app, data_source)
 
 1. Install the necessary dependencies:
 
-```sh
-pip install -r /path/to/requirements.txt
-```
+    ```sh
+    pip install -r /path/to/requirements.txt
+    ```
 
 2. Create or configure the configuration file `config/config.yaml` with the necessary settings.
 
 3. Create the Flask application instance:
 
-```python
-from app import create_app
-
-app = create_app('config/config.yaml')
-
-if __name__ == '__main__':
-    app.run()
-```
+    ```python
+    from app import create_app
+    
+    app = create_app('config/config.yaml')
+    
+    if __name__ == '__main__':
+        app.run()
+    ```
 
 4. Access the API and Swagger UI:
 
     - A simple homepage containing a list of apis under `/`.
     - API endpoints will be available under `/api`.
+    - API spec will be available under `/api/spec`.
     - Swagger UI will be available under `/swagger`.
 
 ## Error Handling

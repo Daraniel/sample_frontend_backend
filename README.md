@@ -1,68 +1,58 @@
-E:\Nodejs\npx.cmd --yes create-react-app"@latest" . --template typescript
+# Simple Frontend Backend
 
-Creating a new React app in C:\Users\P3TER\PycharmProjects\simple_frontend_backend\frontend.
+This project is a sample web application built with Flask backend and React frontend.
 
-Installing packages. This might take a couple of minutes.
-Installing react, react-dom, and react-scripts with cra-template-typescript...
+It allows accessing data from the provided data source (default: excel data file) and accessing various tables on it.
 
+It mainly focuses on creating a relatively generic and easy to extend backend and allows adding a new API endpoint for
+each table in a single line. It also auto creates Swagger for the api.
 
-added 1476 packages in 2m
+A frontend is provided to allow accessing/viewing the data.
 
-258 packages are looking for funding
-  run `npm fund` for details        
+## General Information
 
-Initialized a git repository.
+[Include general information about the project here, such as its purpose, features, and target audience.]
 
-Installing template dependencies using npm...
+## Folder Structure
 
-added 45 packages, removed 1 package, and changed 2 packages in 12s
+- `backend`: Contains the backend codebase for the web application. Refer to [backend/README.md](./backend/README.md)
+  for setup instructions.
+- `frontend`: Contains the frontend codebase for the web application. Refer
+  to [frontend/README.md](./frontend/README.md) for setup instructions.
+- `docs`: Contains documentation files providing detailed information about the project setup, configuration, usage, and
+  more.
 
-262 packages are looking for funding
-  run `npm fund` for details
+## Getting Started
 
-We detected TypeScript in your project (src\App.test.tsx) and created a tsconfig.json file for you.
+To learn more about the project:
 
-Your tsconfig.json has been populated with default values.
+1. **Backend Setup**: Navigate to the `backend` folder and refer to the [README.md](./backend/README.md) file in the
+   backend folder for instructions on setting up and running the backend.
 
-Removing template package using npm...
+2. **Frontend Setup**: Navigate to the `frontend` folder and refer to the [README.md](./frontend/README.md) file in the
+   frontend folder for instructions on setting up and running the frontend.
 
+3. **Documentation**: Explore the `docs` folder for detailed documentation on various aspects of the project, including
+   configuration, usage, and more.
 
-removed 1 package, and audited 1520 packages in 11s
+## Dockerization
 
-262 packages are looking for funding
-  run `npm fund` for details
+To run the project using Docker, follow these steps:
 
-8 vulnerabilities (2 moderate, 6 high)
+1. **Build Docker Images**:
 
-To address all issues (including breaking changes), run:
-  npm audit fix --force
+    ```bash
+    docker-compose build
+    ```
 
-Run `npm audit` for details.
+2. **Run Docker Containers**:
 
-Created git commit.
+    ```bash
+    docker-compose up
+    ```
 
-Success! Created frontend at C:\Users\P3TER\PycharmProjects\simple_frontend_backend\frontend
-Inside that directory, you can run several commands:
+3. **Access the Application**:
 
-  npm start
-    Starts the development server.
-
-  npm run build
-    Bundles the app into static files for production.
-
-  npm test
-    Starts the test runner.
-
-  npm run eject
-    Removes this tool and copies build dependencies, configuration files
-    and scripts into the app directory. If you do this, you can’t go back!
-
-We suggest that you begin by typing:
-
-  cd C:\Users\P3TER\PycharmProjects\simple_frontend_backend\frontend
-  npm start
-
-Happy hacking!
-Done
-
+   The frontend will be available at [http://localhost:3000](http://localhost:3000) and the backend
+   at [http://localhost:5000](http://localhost:5000).
 

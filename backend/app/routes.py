@@ -3,6 +3,7 @@ from flask_restful import Api, Resource
 
 from app.data_source import DataLevel, DataSourceException, BaseDataSource
 
+
 class GenericDataResource(Resource):
     def __init__(self, data_source: BaseDataSource, table_name: str, data_description: str):
         self.data_source = data_source
@@ -27,7 +28,7 @@ class GenericDataResource(Resource):
     def handle_metadata_request(get_metadata_func, table_name):
         """Fetch metadata"""
         try:
-            metadata = get_metadata_func(table_name)
+            metadata = get_metadata_func(table_name).to_json()
             return {'status': 'success', 'metadata': metadata}, 200
         except DataSourceException as e:
             return {'status': 'error', 'message': str(e)}, 500
@@ -219,8 +220,18 @@ class GenericDataResource(Resource):
                   type: string
                   default: success
                 metadata:
-                  type: string
+                  type: object
                   description: Metadata content
+                  properties:
+                    0:
+                      type: string
+                      example: "First line of the metadata"
+                    1:
+                      type: string
+                      example: "Second line of the metadata"
+                    2:
+                      type: string
+                      example: "Third line of the metadata"
           500:
             description: Internal Server Error
             schema:

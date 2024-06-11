@@ -1,6 +1,2 @@
-theme: just-the-docs
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-default-layout
+theme: jekyll-theme-minimal
+title: Simple Front/Back-end

@@ -28,9 +28,9 @@ Frontend is a simple single page React page which allows visualization of the da
 ## Folder Structure
 
 - `backend`: Contains the backend codebase for the web application. Refer
-  to [README.md](../../backend/README.md) in it for setup instructions, or alternatively check the docs.
+  to `README.md` in it for setup instructions, or alternatively check the docs.
 - `frontend`: Contains the frontend codebase for the web application. Refer
-  to [README.md](../../frontend/README.md) in it for setup instructions, or alternatively check the docs.
+  to `README.md` in it for setup instructions, or alternatively check the docs.
 - `docs`: Contains documentation files providing detailed information about the project setup, configuration, usage, and
   more.
 
@@ -38,10 +38,10 @@ Frontend is a simple single page React page which allows visualization of the da
 
 To learn more about the project:
 
-1. **Backend Setup**: Navigate to the `backend` folder and refer to the [README.md](../../backend/README.md) file in the
+1. **Backend Setup**: Navigate to the `backend` folder and refer to the `README.md` file in the
    backend folder for instructions on setting up and running the backend.
 
-2. **Frontend Setup**: Navigate to the `frontend` folder and refer to the [README.md](../../frontend/README.md) file in
+2. **Frontend Setup**: Navigate to the `frontend` folder and refer to the `README.md` file in
    the frontend folder for instructions on setting up and running the frontend.
 
 3. **Documentation**: Explore the `docs` folder for detailed documentation on various aspects of the project, including

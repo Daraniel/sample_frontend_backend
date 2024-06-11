@@ -8,6 +8,25 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: pages-themes/minima
 plugins:
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+header_pages:
+  - ./en/project_info.md
+      - ./en/frontend/frontend.md
+      - ./en/backend/app.md
+          - ./en/backend/config.md
+          - ./en/backend/data_source.md
+          - ./en/backend/exceptions.md
+          - ./en/backend/logger.md
+          - ./en/backend/routes.md
+  - ./de/project_info.md
+    - ./de/frontend/frontend.md
+    - ./de/backend/app.md
+    - ./de/backend/config.md
+    - ./de/backend/data_source.md
+    - ./de/backend/exceptions.md
+    - ./de/backend/logger.md
+    - ./de/backend/routes.md

@@ -32,9 +32,9 @@ Das Frontend ist eine einfache Single-Page-React-Anwendung, die die Visualisieru
 ## Ordnerstruktur
 
 - `backend`: Enthält den Backend-Code der Webanwendung. Weitere Informationen zur Einrichtung finden Sie in
-  der [README.md](../../backend/README.md)-Datei im Backend-Ordner oder alternativ in der Dokumentation.
+  der `README.md`-Datei im Backend-Ordner oder alternativ in der Dokumentation.
 - `frontend`: Enthält den Frontend-Code der Webanwendung. Weitere Informationen zur Einrichtung finden Sie in
-  der [README.md](../../frontend/README.md)-Datei im Frontend-Ordner oder alternativ in der
+  der `README.md`-Datei im Frontend-Ordner oder alternativ in der
   Dokumentation.
 - `docs`: Enthält Dokumentationsdateien mit detaillierten Informationen zur Projekteinrichtung, Konfiguration, Nutzung
   und mehr.
@@ -43,11 +43,11 @@ Das Frontend ist eine einfache Single-Page-React-Anwendung, die die Visualisieru
 
 Um mehr über das Projekt zu erfahren:
 
-1. **Backend-Einrichtung**: Navigieren Sie zum `backend`-Ordner und lesen Sie die [README.md](../../backend/README.md)
-   -Datei im Backend-Ordner für Anweisungen zur Einrichtung und Ausführung des Backends.
+1. **Backend-Einrichtung**: Navigieren Sie zum `backend`-Ordner und lesen Sie die `README.md`-Datei im Backend-Ordner
+   für Anweisungen zur Einrichtung und Ausführung des Backends.
 
 2. **Frontend-Einrichtung**: Navigieren Sie zum `frontend`-Ordner und lesen Sie
-   die [README.md](../../frontend/README.md)-Datei im Frontend-Ordner für Anweisungen zur Einrichtung und Ausführung des
+   die `README.md`-Datei im Frontend-Ordner für Anweisungen zur Einrichtung und Ausführung des
    Frontends.
 
 3. **Dokumentation**: Erkunden Sie den `docs`-Ordner für detaillierte Dokumentation zu verschiedenen Aspekten des

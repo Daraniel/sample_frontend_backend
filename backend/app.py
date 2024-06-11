@@ -1,8 +1,8 @@
 from app import create_app
-from flask_cors import CORS
 
 app = create_app()
-CORS(app)
 
 if __name__ == '__main__':
+    # used only when running the app directly, on production it should be used with the flask command,
+    # which also allows setting the host and port (or alternatively pass the host and port to the run `function`)
     app.run()

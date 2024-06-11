@@ -13,17 +13,8 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Expose port 3000
+EXPOSE 3000
 
-# Production stage
-FROM nginx:alpine
-
-# Copy the build files to nginx directory
-COPY --from=build-stage /app/build /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Start frontend server
+CMD ["npm", "start"]

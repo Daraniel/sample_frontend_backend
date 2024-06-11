@@ -38,6 +38,9 @@ endpoints and blueprints, including Swagger UI for API documentation.
     - API spec will be available under `/api/spec`.
     - Swagger UI will be available under `/swagger`.
 
+Alternatively, the server can be started with the `flask` command which allows direct specification of host and port
+with `--host` and `--port` flags.
+
 ## Error Handling
 
 The application includes basic error handling for configuration loading and validation. If the configuration validation

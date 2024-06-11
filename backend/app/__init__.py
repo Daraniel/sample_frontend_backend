@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import jsonify
+from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 
 from app.config import load_config
@@ -24,6 +25,8 @@ def create_app(config_file='config/config.yaml'):
 
     # Register the blueprints
     register_blueprints(app, data_source)
+
+    CORS(app)
 
     return app
 

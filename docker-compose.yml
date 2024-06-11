@@ -15,8 +15,5 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./:/app
-#    volumes:
-#          - ./backend:/app
-#    environment:
-#      - DATA_SOURCE_PATH=/app/path/to/local_file.csv
+#      - ./backend/config/config.yaml:/app/config.yaml  # you can use something like this to change the config file
+      - ./vgrdl_r2b1_bs2022_0.xlsx:/vgrdl_r2b1_bs2022_0.xlsx

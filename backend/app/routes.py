@@ -268,6 +268,13 @@ def add_resource_to_api(api, resource_name, table_name, data_source):
 
 def create_data_blueprint(data_source):
     data_bp = Blueprint('data', __name__)
+
+    def after_request(response):
+        header = response.headers
+        header['Access-Control-Allow-Origin'] = '*'
+        # Other headers can be added here if needed
+        return response
+
     api = Api(data_bp)
 
     # Create resource instances for different endpoints and add them to the API

@@ -112,6 +112,9 @@ register_blueprints(app, data_source)
     - API-Spezifikationen sind unter `/api/spec` verfügbar.
     - Swagger UI ist unter `/swagger` verfügbar.
 
+Alternativ kann der Server mit dem Befehl "flask" gestartet werden, der die direkte Angabe von Host und Port mit den
+Flags "--host" und "--port" ermöglicht.
+
 ## Fehlerbehandlung
 
 Die Anwendung umfasst eine grundlegende Fehlerbehandlung für das Laden und Validieren der Konfiguration. Wenn die

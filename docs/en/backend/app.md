@@ -11,7 +11,7 @@ source, and register various API endpoints and blueprints, including Swagger UI 
 ## Main Dependencies
 
 - `flask`: For creating the web application.
-- `flask-RESTful`: For creating RESTful APIs with Flask.
+- `flask-restful`: For creating RESTful APIs with Flask.
 - `flask_cors`: For enabling Cross-Origin Resource Sharing (CORS) in Flask applications.
 - `flask_swagger`: For generating Swagger documentation from the Flask app.
 - `flask_swagger_ui`: For serving Swagger UI to document the API.

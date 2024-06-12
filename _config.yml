@@ -2,7 +2,7 @@ theme: just-the-docs
 
 lsi: false
 safe: true
-source: ./
+source: ./docs
 incremental: false
 highlighter: rouge
 gist:

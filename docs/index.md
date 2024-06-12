@@ -59,4 +59,3 @@ Die Dokumentation ist wie folgt strukturiert:
         - [Routenmodul-Dokumentation](./de/backend/routes.md)
 
 ---
-

@@ -1,0 +1,9 @@
+title: Simple Frontend Backend
+description: This project is a sample web application built with Flask backend and React frontend.
+theme: just-the-docs
+
+
+url: https://daraniel.github.io/sample_frontend_backend/
+
+aux_links:
+  Template Repository: https://github.com/Daraniel/sample_frontend_backend

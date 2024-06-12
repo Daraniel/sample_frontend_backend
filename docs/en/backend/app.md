@@ -31,7 +31,7 @@ source, and register various API endpoints and blueprints, including Swagger UI 
 - `templates`: Directory containing the template files.
 - `tests`: Directory containing tests.
 
-## Main Function
+## Main Functions
 
 ### `create_app(config_file='config/config.yaml')`
 

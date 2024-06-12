@@ -24,7 +24,7 @@ A frontend is provided to allow accessing/viewing the data.
 Docs are structured as follows:
 
 - [General Project Information](./en/project_info.md)
-    - [General Project Information](./en/frontend/frontend.md)
+    - [General Frontend Information](./en/frontend/frontend.md)
     - [General Backend Documentation](./en/backend/app.md)
         - [Config Module Documentation](./en/backend/config.md)
         - [Data Source Module Documentation](./en/backend/data_source.md)

@@ -6,6 +6,13 @@ from app.data_source import DataLevel, DataSourceException, BaseDataSource
 
 class GenericDataResource(Resource):
     def __init__(self, data_source: BaseDataSource, table_name: str, data_description: str):
+        """
+        A helper class that automatically generates get data and get metadata APIs for the given data source
+
+        :param data_source: data source object to get the data from
+        :param table_name: name of the table on the data source to get the data from
+        :param data_description:
+        """
         self.data_source = data_source
         self.table_name = table_name
         self.data_description = data_description
@@ -267,6 +274,12 @@ def add_resource_to_api(api, resource_name, table_name, data_source):
 
 
 def create_data_blueprint(data_source):
+    """
+    Helper function to generate a data blueprint that contains the API for accessing the data
+
+    :param data_source: Data source to get the data from
+    :return: Generated blueprint
+    """
     data_bp = Blueprint('data', __name__)
 
     def after_request(response):
@@ -286,9 +299,9 @@ def create_data_blueprint(data_source):
 
 def create_home_blueprint(api_url, swagger_url):
     """
-    Dynamically generate the web app blueprint for home page which contains info about the data blueprint
+    Helper function that dynamically generates the webapp blueprint for homepage which contains info about the data blueprint
 
-    Please note that this function should only be called after registering all other blueprints.
+    Please note that this function should be called after registering other blueprints.
 
     :return: Generated blueprint
     """

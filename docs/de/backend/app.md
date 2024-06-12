@@ -34,7 +34,7 @@ Swagger UI für die API-Dokumentation.
 - `templates`: Verzeichnis mit den Vorlagendateien.
 - `tests`: Verzeichnis mit Tests.
 
-## Hauptfunktion
+## Hauptfunktionen
 
 ### `create_app(config_file='config/config.yaml')`
 

@@ -12,7 +12,7 @@ der Dokumentation in Englisch und Deutsch.
 
 ## English Documentation
 
-This project is a sample web application built with Flask backend and React frontend.
+This project is a sample web application built with Flask backend and React frontend.p;
 
 It allows accessing data from the provided data source (default: excel data file) and accessing various tables on it.
 

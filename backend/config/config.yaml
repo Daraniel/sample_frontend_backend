@@ -17,4 +17,3 @@ data_source:
     excel_file: "../vgrdl_r2b1_bs2022_0.xlsx"
   excel:
     file_name: "../vgrdl_r2b1_bs2022_0.xlsx"
-    load_from_web: false  # Flag to load tables from web if not found
